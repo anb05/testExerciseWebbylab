@@ -17,5 +17,5 @@
 
 declare(strict_types = 1);
 
-echo __FILE__ . " " . __LINE__ . "\n";
+//echo __FILE__ . " " . __LINE__ . "\n";
 require_once __DIR__ . "/../Service/autoload.php";
