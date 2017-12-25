@@ -9,3 +9,7 @@
 $cat = new Cat ('garfield');
 $cat->getName () === 'garfield' // true;
 $cat->meow () === 'Cat garfield is saying meow' // true;
+
+Решение:
+При решении тестового задания, на мой взгляд, целесообразно использовать паттерн "Стратегия".
+
