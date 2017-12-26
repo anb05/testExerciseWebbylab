@@ -41,7 +41,7 @@ class Meow implements VoiceBehavior
      *
      * @return string
      */
-    public function say()
+    public function say() : string
     {
         return "mouw \n";
     }

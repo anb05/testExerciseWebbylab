@@ -27,7 +27,6 @@ declare(strict_types = 1);
 function autoload($class)
 {
     $dirArray = explode("\\", $class);
-    unset($dirArray[0]);
 
     $path = realpath(
         __DIR__ . "/../" . DIRECTORY_SEPARATOR .

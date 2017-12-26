@@ -20,6 +20,7 @@ declare(strict_types = 1);
 namespace Models;
 
 use Models\Animal;
+use Contracts\VoiceBehavior;
 
 /**
  * This class implements a Cat simulation
@@ -39,13 +40,16 @@ class Cat extends Animal
     /**
      * In this construct initializations property Cat
      *
-     * @param string|null $name The name of the animal
+     * @param VoiceBehavior $voice The object of simulate Cat voice
+     * @param string|null   $name  The name of the animal
      */
-    public function __construct($name = null)
+    public function __construct(VoiceBehavior $voice, $name = null)
     {
-        parent::__construct($name);
+        parent::__construct($voice, $name);
 
-        echo "create object" . $this->animal . "\n";
+        $animal = explode("\\", __CLASS__);
+        $this->animal = $animal[count($animal) - 1];
+        //echo "create object: " . $this->animal . "\n";
     }
 
     /**
@@ -57,13 +61,13 @@ class Cat extends Animal
     {
         $speech  = $this->animal . " ";
 
-        if (hasName()) {
-            $speech .= getName() . " is saying ";
+        if ($this->hasName()) {
+            $speech .= $this->getName() . " is saying ";
         } else {
             return "You don't have a Cat model!!!\n";
         }
 
-        if (hasVoice()) {
+        if ($this->hasVoice()) {
             $speech .= $this->speack();
         } else {
             return "You don't have a Cat model!!!\n";

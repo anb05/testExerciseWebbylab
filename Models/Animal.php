@@ -54,13 +54,14 @@ abstract class Animal
     /**
      * In this construct initializations property animal
      *
-     * @param string|null $name The name of the animal
+     * @param VoiceBehavior $voice The object of simulate animals voice
+     * @param string|null   $name  The name of the animal
      */
-    public function __construct($name = null)
+    public function __construct(VoiceBehavior $voice, $name = null)
     {
         $this->name = $name;
 
-        $this->animal = array_pop(explode("\\", __CLASS__));
+        $this->voice = $voice;
     }
 
     /**
